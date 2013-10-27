@@ -51,7 +51,7 @@ $result = mysqli_query($con,"SELECT * FROM `rutas` ");
           <ul class="menu wrapper">
             <li><a href="index.html">Home Page</a></li>
             <li><a href="nutrition.html">Nutrition</a></li>
-            <li><a class="active" href="diets.html">Rutas</a></li>
+            <li><a class="active" href="diets.php">Rutas</a></li>
             <li><a href="programs.html">Programs</a></li>
             <li><a href="contacts.html">Contacts</a></li>
           </ul>
