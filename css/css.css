@@ -16,3 +16,9 @@
   font-weight: 300;
   src: local('Open Sans Cond Light Italic'), local('OpenSans-CondensedLightItalic'), url(jIXlqT1WKafUSwj6s9AzV6XnXbwdDC8wAz6IIzmCDUP3rGVtsTkPsbDajuO5ueQw.woff) format('woff');
 }
+
+.linea li{
+  display: inline;
+  padding: 2px;
+}
+

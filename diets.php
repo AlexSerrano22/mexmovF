@@ -1,3 +1,15 @@
+<?php
+     //include 'BD.php';
+$con=mysqli_connect("localhost","root","","observatorio");
+// Check connection
+if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+$i=0;
+$result = mysqli_query($con,"SELECT * FROM `rutas` ");
+
+?>
 <!DOCTYPE html>
 <html class="no-js"  lang="en">
 <head>
@@ -17,9 +29,13 @@
 <script src="js/jquery-ui.js"></script>
 
 
+<script>
+  $(function() {
+    $( "#accordion" ).accordion();
+  });
+  </script>
 
-
-<!--<script src="js/jqueryRutas.js"></script>-->
+<script src="js/jqueryRutas.js"></script>
 <!--[if lt IE 9]>
 <script type="text/javascript" src="js/html5.js"></script>
 <link rel="stylesheet" href="css/ie.css" type="text/css" media="screen">
@@ -67,16 +83,18 @@
 
 
                 <div id="accordion">
-                  <h3>Section 1</h3>
-  <div>
-    <p>
-    Mauris mauris ante, blandit et, ultrices a, suscipit eget, quam. Integer
-    ut neque. Vivamus nisi metus, molestie vel, gravida in, condimentum sit
-    amet, nunc. Nam a nibh. Donec suscipit eros. Nam mi. Proin viverra leo ut
-    odio. Curabitur malesuada. Vestibulum a velit eu ante scelerisque vulputate.
-    </p>
-  </div>
-        <?php echo "<div></div>" ?>
+                  
+  
+          <?php
+            while($row = mysqli_fetch_array($result))
+               {  
+           echo "<div> <h3>$row[NOMBRE]</h3> </div>";
+            echo "<div><p>Descripcion: $row[DESCRIPCION].</br>
+            Distancia: $row[DISTANCIA] km.<p></br>
+            <input type=button value='ver ruta' onClick='rutas($row[idRUTAS])'></div>";
+          }
+                
+          ?>
 
   
                   
